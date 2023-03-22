@@ -5,6 +5,11 @@ function App() {
   return (
     <div className='App'>
       <div>
+        <Button rounded outline>
+          Hi there!!
+        </Button>
+      </div>
+      <div>
         <Button success rounded outline>
           Click me!!
         </Button>
@@ -23,7 +28,7 @@ function App() {
         </Button>
       </div>
       <div>
-        <Button secondary rounded>
+        <Button primary rounded>
           Something!
         </Button>
       </div>
