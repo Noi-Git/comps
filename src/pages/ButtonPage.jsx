@@ -9,12 +9,12 @@ const ButtonPage = () => {
       <div>
         <Button className='mb-5' rounded outline>
           <GoBell />
-          Hi there!!
+          Hi there!
         </Button>
       </div>
       <div>
         <Button success rounded outline>
-          Click me!!
+          Click me!
         </Button>
       </div>
       <div>
