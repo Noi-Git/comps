@@ -34,7 +34,7 @@ function App() {
       </div>
       <div>
         <Button primary rounded>
-          <GoCloudDownload />
+          <GoCloudDownload className='mr-1' />
           Something!
         </Button>
       </div>
