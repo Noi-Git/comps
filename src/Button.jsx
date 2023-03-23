@@ -10,6 +10,7 @@ const Button = ({
   danger,
   outline,
   rounded,
+  ...rest //collect all the remaining properties
 }) => {
   const classes = className('flex items-center px-3 py-1.5 border', {
     'border-blue-500 bg-blue-500 text-white': primary,
@@ -19,14 +20,18 @@ const Button = ({
     'border-red-500 bg-red-500 text-white': danger,
     'rounded-lg': rounded,
     'bg-white': outline,
-    'text-blue-500': outline && primary,
-    'text-gray-600': outline && secondary,
-    'text-green-500': outline && success,
-    'text-yellow-500': outline && warning,
-    'text-red-500': outline && danger,
+    'text-blue-600': outline && primary,
+    'text-gray-500': outline && secondary,
+    'text-green-600': outline && success,
+    'text-yellow-600': outline && warning,
+    'text-red-600': outline && danger,
   })
 
-  return <button className={classes}>{children}</button>
+  return (
+    <button {...rest} className={classes}>
+      {children}
+    </button>
+  )
 }
 
 Button.propTypes = {
