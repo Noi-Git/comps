@@ -6,7 +6,7 @@ function App() {
   return (
     <div className='App'>
       <div>
-        <Button rounded outline>
+        <Button className='mb-5' rounded outline>
           <GoBell />
           Hi there!!
         </Button>

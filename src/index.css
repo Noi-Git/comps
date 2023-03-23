@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* add style to the button */
 button > svg {
   margin-right: 5px;
 }
