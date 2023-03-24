@@ -7,7 +7,6 @@ const Accordion = ({ items }) => {
     const isExpanded = index === expandedIndex
 
     const content = isExpanded && <div>{item.content}</div>
-    // console.log(isExpanded)
 
     if (index === expandedIndex) {
       console.log('expanded')
@@ -19,6 +18,7 @@ const Accordion = ({ items }) => {
       <div key={item.id}>
         <div>{item.label}</div>
         {content}
+        {/* {isExpanded && <div>{item.content}</div>} */}
       </div>
     )
   })
