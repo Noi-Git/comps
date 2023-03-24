@@ -6,15 +6,13 @@ const Accordion = ({ items }) => {
   const renderedItems = items.map((item, index) => {
     const isExpanded = index === expandedIndex
 
-    if (index === expandedIndex) {
-      console.log('expanded')
-    } else {
-      console.log('collapsed')
-    }
+    const icon = <span>{isExpanded ? 'DOWN' : 'LEFT'}</span>
 
     return (
       <div key={item.id}>
-        <div onClick={() => setExpandedIndex(index)}>{item.label}</div>
+        <div onClick={() => setExpandedIndex(index)}>
+          {item.label} {icon}
+        </div>
         {isExpanded && <div>{item.content}</div>}
       </div>
     )
