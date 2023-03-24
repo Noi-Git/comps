@@ -12,12 +12,6 @@ const Accordion = ({ items }) => {
         return nextIndex
       }
     })
-
-    // if (expandedIndex === nextIndex) {
-    //   setExpandedIndex(-1)
-    // } else {
-    //   setExpandedIndex(nextIndex)
-    // }
   }
 
   const renderedItems = items.map((item, index) => {
