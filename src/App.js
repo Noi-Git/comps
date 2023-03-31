@@ -5,7 +5,7 @@ import Dropdown from './components/Dropdown'
 function App() {
   const [selection, setSelection] = useState(null)
 
-  const handleSelection = (option) => {
+  const handleSelect = (option) => {
     setSelection(option)
   }
 
@@ -16,11 +16,7 @@ function App() {
   ]
 
   return (
-    <Dropdown
-      options={options}
-      selection={selection}
-      onSelect={handleSelection}
-    />
+    <Dropdown options={options} value={selection} onChange={handleSelect} />
   )
 }
 
