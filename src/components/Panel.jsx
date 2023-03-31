@@ -5,7 +5,7 @@ const Panel = ({ children, className, ...rest }) => {
   const finalClassName = classNames(
     'border rounded p-3 shadow bg-white w-full',
     className
-  ) // this const is use for store all reusable style that belong to Panel
+  ) // this constant is use for store all default style that belong to Panel
 
   return (
     <div {...rest} className={finalClassName}>
