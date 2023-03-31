@@ -8,14 +8,16 @@ const Dropdown = ({ options }) => {
     setIsOpen(!isOpen)
   }
 
-  const handleOptionClick = () => {
+  const handleOptionClick = (option) => {
     // close dropdow
     setIsOpen(false)
+    // show option selected
+    console.log(option)
   }
 
   const renderedOptions = options.map((option) => {
     return (
-      <div onClick={handleOptionClick} key={option.value}>
+      <div onClick={() => handleOptionClick(option)} key={option.value}>
         {option.label}
       </div>
     )
