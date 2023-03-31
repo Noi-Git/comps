@@ -23,14 +23,19 @@ const Dropdown = ({ options, selection, onSelect }) => {
     )
   })
 
+  /*
+  === modify it to --- {selection?.label || 'Select...'}
   let content = 'Select...'
   if (selection) {
     content = selection.label
   }
+  === the return part used to be:
+  <div onClick={handleClick}>{content}</div>
+  */
 
   return (
     <div>
-      <div onClick={handleClick}>{content}</div>
+      <div onClick={handleClick}>{selection?.label || 'Select...'}</div>
       {isOpen && <div>{renderedOptions}</div>}
     </div>
   )
