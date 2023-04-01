@@ -20,7 +20,7 @@ function App() {
         <Route path='/buttons'>
           <ButtonPage />
         </Route>
-        <Route path='/buttons'>
+        <Route path='/modal'>
           <ModalPage />
         </Route>
       </div>
