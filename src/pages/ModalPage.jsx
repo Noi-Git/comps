@@ -14,7 +14,8 @@ const ModalPage = () => {
       <Button primary onClick={handleClick}>
         Open Modal
       </Button>
-      <Modal />
+      {/* if the showModal is true - show the Modal. If showModal is false - show not thing */}
+      {showModal && <Modal />}
     </div>
   )
 }
