@@ -22,7 +22,7 @@ const Sidebar = () => {
   })
 
   return (
-    <div className='sticky top-0 overflow-y-scoll flex flex-col'>
+    <div className='sticky top-0 overflow-y-scoll flex flex-col items-start'>
       {renderedLinks}
     </div>
   )
