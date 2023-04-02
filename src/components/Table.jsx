@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Table = () => {
-  return <div>Table</div>
+const Table = ({ data }) => {
+  return <div>{data.length}</div>
 }
 
 export default Table
