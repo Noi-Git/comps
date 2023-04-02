@@ -13,8 +13,13 @@ const ModalPage = () => {
     setShowModal(false)
   }
 
+  const actionBar = (
+    <div>
+      <Button primary>I Accept</Button>
+    </div>
+  )
   const modal = (
-    <Modal onClose={handleClose} actionBar={<Button primary>I Accept</Button>}>
+    <Modal onClose={handleClose} actionBar={actionBar}>
       <p>Here is an important agreement for you to accept</p>
     </Modal>
   )
