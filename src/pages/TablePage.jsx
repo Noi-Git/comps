@@ -9,7 +9,7 @@ const TablePage = () => {
     { name: 'Lime', color: 'bg-green-500', score: 4 },
   ]
 
-  const config = [{ label: 'Name' }, { label: 'Color' }, { label: 'Score' }]
+  const config = [{ label: 'Fruits' }, { label: 'Color' }, { label: 'Score' }]
 
   return (
     <div>
