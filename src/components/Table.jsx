@@ -3,7 +3,7 @@ import React from 'react'
 const Table = ({ data }) => {
   const renderedRows = data.map((fruit) => {
     return (
-      <tr>
+      <tr key={fruit.name}>
         <td>{fruit.name}</td>
         <td>{fruit.color}</td>
         <td>{fruit.score}</td>
