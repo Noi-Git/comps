@@ -28,17 +28,17 @@ const ModalPage = () => {
 
   return (
     <div>
+      <Button primary onClick={handleClick}>
+        Open Modal
+      </Button>
+      {/* if the showModal is true - show the Modal. If showModal is false - show not thing */}
+      {showModal && modal}
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
         porttitor, nisl vel iaculis interdum, dui ante pretium purus, eget
         fringilla risus nisi cursus arcu. Aliquam metus massa, mattis blandit
         viverra sed,
       </p>
-      <Button primary onClick={handleClick}>
-        Open Modal
-      </Button>
-      {/* if the showModal is true - show the Modal. If showModal is false - show not thing */}
-      {showModal && modal}
     </div>
   )
 }
