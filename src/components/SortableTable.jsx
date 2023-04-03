@@ -43,13 +43,20 @@ const SortableTable = (props) => {
   })
 
   /* 
-  - Only sort daa if sortOrder && sortBy ar not null
+  - Only sort data if sortOrder && sortBy ar not null
   - Make a copy of the 'data' props
   - Find the correct sortValue function and use it for sorting
   */
 
   //Make a copy of the 'data' props
   let sortedData = data
+
+  //Only sort data if sortOrder && sortBy ar not null
+  if (sortOrder && sortBy) {
+    // Find the correct sortValue function and use it for sorting
+    // const column = config.find(column => column.label === sortBy)
+    const { sortValue } = config.find((column) => column.label === sortBy) // destructed from column
+  }
 
   return (
     <div>
