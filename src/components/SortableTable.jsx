@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import Table from './Table'
 
 const SortableTable = (props) => {
+  const [sortOrder, setSortOrder] = useState(null)
+  const [sortBy, setSortBy] = useState(null)
+
   /* we are not modifying the props 
      - we only map over the config
      - if find the object that have SortValue 
@@ -9,7 +13,15 @@ const SortableTable = (props) => {
   const { config } = props
 
   const handleClick = (label) => {
-    console.log(label)
+    // console.log(label)
+    // look at sort order andif (sortOrder === null)
+    if (sortOrder === null) {
+      setSortOrder('asc')
+    } else if (sortOrder === 'asc') {
+      setSortOrder('desc')
+    } else if (sortOrder === 'desc') {
+      setSortOrder(null)
+    }
   }
 
   const updatedConfig = config.map((column) => {
