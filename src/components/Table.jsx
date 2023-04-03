@@ -12,7 +12,7 @@ const Table = ({ data, config, keyFn }) => {
   const renderedRows = data.map((rowData) => {
     const renderedCells = config.map((column) => {
       return (
-        <td className='p-2' key={column.label}>
+        <td className='px-12' key={column.label}>
           {column.render(rowData)}
         </td>
       )
@@ -25,7 +25,7 @@ const Table = ({ data, config, keyFn }) => {
   })
 
   return (
-    <table className='table-zuto border-spacing-2'>
+    <table className='table-zuto border-spacing-2 mt-6'>
       <thead>
         <tr className='border-b-2'>{renderedHeaders}</tr>
       </thead>
