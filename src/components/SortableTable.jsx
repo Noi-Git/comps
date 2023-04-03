@@ -10,7 +10,7 @@ const SortableTable = (props) => {
      - if find the object that have SortValue 
        --- add header with sort function
   */
-  const { config } = props
+  const { config, data } = props
 
   const handleClick = (label) => {
     // console.log(label)
@@ -41,6 +41,15 @@ const SortableTable = (props) => {
       ),
     }
   })
+
+  /* 
+  - Only sort daa if sortOrder && sortBy ar not null
+  - Make a copy of the 'data' props
+  - Find the correct sortValue function and use it for sorting
+  */
+
+  //Make a copy of the 'data' props
+  let sortedData = data
 
   return (
     <div>
