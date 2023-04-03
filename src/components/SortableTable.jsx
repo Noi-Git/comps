@@ -56,20 +56,18 @@ const SortableTable = (props) => {
     // Find the correct sortValue function and use it for sorting
     // const column = config.find(column => column.label === sortBy)
     const { sortValue } = config.find((column) => column.label === sortBy) // destructed from column
-    sortedData = [
-      ...data.sort((a, b) => {
-        const valueA = sortValue(a)
-        const valueB = sortValue(b)
+    sortedData = [...data].sort((a, b) => {
+      const valueA = sortValue(a)
+      const valueB = sortValue(b)
 
-        const reverseOrder = sortOrder === 'asc' ? 1 : -1
+      const reverseOrder = sortOrder === 'asc' ? 1 : -1
 
-        if (typeof valueA === 'string') {
-          return valueA.localeCompare(valueB) * reverseOrder
-        } else {
-          return (valueA - valueB) * reverseOrder
-        }
-      }),
-    ]
+      if (typeof valueA === 'string') {
+        return valueA.localeCompare(valueB) * reverseOrder
+      } else {
+        return (valueA - valueB) * reverseOrder
+      }
+    })
   }
 
   return (
