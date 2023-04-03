@@ -6,16 +6,16 @@ const SortableTable = (props) => {
   const [sortOrder, setSortOrder] = useState(null)
   const [sortBy, setSortBy] = useState(null)
 
-  /* we are not modifying the props 
-     - we only map over the config
-     - if find the object that have SortValue 
-       --- add header with sort function
-  */
   const { config, data } = props
 
   const handleClick = (label) => {
-    // console.log(label)
-    // look at sort order andif (sortOrder === null)
+    // Resetting Sort Order
+    if (sortBy && label !== sortBy) {
+      setSortOrder('asc')
+      setSortBy(label)
+      return
+    }
+
     if (sortOrder === null) {
       setSortOrder('asc')
       setSortBy(label)
@@ -40,7 +40,7 @@ const SortableTable = (props) => {
           className='cursor-pointer hover:bg-gray-100'
           onClick={() => handleClick(column.label)}
         >
-          <div className='flex items-center pr-2'>
+          <div className='flex items-center'>
             {getIcons(column.label, sortBy, sortOrder)}
             {column.label}
           </div>
@@ -49,20 +49,10 @@ const SortableTable = (props) => {
     }
   })
 
-  /* 
-  - Only sort data if sortOrder && sortBy ar not null
-  - Make a copy of the 'data' props
-  - Find the correct sortValue function and use it for sorting
-  */
-
-  //Make a copy of the 'data' props
   let sortedData = data
 
-  //Only sort data if sortOrder && sortBy ar not null
   if (sortOrder && sortBy) {
-    // Find the correct sortValue function and use it for sorting
-    // const column = config.find(column => column.label === sortBy)
-    const { sortValue } = config.find((column) => column.label === sortBy) // destructed from column
+    const { sortValue } = config.find((column) => column.label === sortBy)
     sortedData = [...data].sort((a, b) => {
       const valueA = sortValue(a)
       const valueB = sortValue(b)
@@ -77,12 +67,7 @@ const SortableTable = (props) => {
     })
   }
 
-  return (
-    <div>
-      {sortOrder} - {sortBy}
-      <Table {...props} config={updatedConfig} data={sortedData} />
-    </div>
-  )
+  return <Table {...props} config={updatedConfig} data={sortedData} />
 }
 
 const getIcons = (label, sortBy, sortOrder) => {
