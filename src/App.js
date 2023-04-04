@@ -7,7 +7,7 @@ import Sidebar from './components/Sidebar'
 import ModalPage from './pages/ModalPage'
 import TablePage from './pages/TablePage'
 import DemoCounterPage from './pages/DemoCounterPage'
-import DemoCounterPageReducer from './pages/DemoCounterPage'
+import DemoCounterPageReducer from './pages/DemoCounterPageReducer'
 
 function App() {
   return (
