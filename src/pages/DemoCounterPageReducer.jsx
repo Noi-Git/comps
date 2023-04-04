@@ -4,6 +4,7 @@ import Panel from '../components/Panel'
 
 const DemoCounterPageReducer = ({ initialCount }) => {
   const [count, setCount] = useState(initialCount)
+  const [valueToAdd, setValueToAdd] = useState(0)
 
   useEffect(() => {
     console.log(count)
@@ -15,6 +16,12 @@ const DemoCounterPageReducer = ({ initialCount }) => {
 
   const decrement = () => {
     setCount(count - 1)
+  }
+
+  const handleChange = (event) => {
+    const value = parseInt(event.target.value)
+
+    console.log(value)
   }
 
   return (
@@ -31,6 +38,8 @@ const DemoCounterPageReducer = ({ initialCount }) => {
         <label>Add a lot!</label>
         <input
           className='p-1 m-3 bg-gray-50 border border-gray-300'
+          value={valueToAdd}
+          onChange={handleChange}
           type='number'
         />
         <Button>Add it</Button>
