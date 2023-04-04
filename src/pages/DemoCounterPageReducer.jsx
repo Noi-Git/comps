@@ -5,6 +5,7 @@ import Panel from '../components/Panel'
 const INCREMENT_COUNT = 'increment'
 const DECREMENT_COUNT = 'decrement'
 const SET_VALUE_TO_ADD = 'set-value-to-add'
+const ADD_VALUE_TO_COUNT = 'add-value-to-count'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -16,6 +17,9 @@ const reducer = (state, action) => {
 
     case SET_VALUE_TO_ADD:
       return { ...state, valueToAdd: action.payload }
+
+    case ADD_VALUE_TO_COUNT:
+      return { ...state, count: state.count + state.valueToAdd, valueToAdd: 0 }
 
     default:
       return state
@@ -45,12 +49,16 @@ const DemoCounterPageReducer = ({ initialCount }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
+    dispatch({ type: ADD_VALUE_TO_COUNT })
+
+    // setCount(count + valueToAdd)
+    // setValueToAdd(0)
   }
 
   const handleChange = (event) => {
     const value = parseInt(event.target.value) || 0
 
-    // setValueToAdd(value)
     dispatch({
       type: SET_VALUE_TO_ADD,
       payload: value, // tell reducer what we want to set the value to
