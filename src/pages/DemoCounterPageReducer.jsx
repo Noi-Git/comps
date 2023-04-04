@@ -10,6 +10,13 @@ const reducer = (state, action) => {
     }
   }
 
+  if (action.type === 'change-value-to-add') {
+    return {
+      ...state,
+      valueToAdd: action.payload,
+    }
+  }
+
   return state // alway return state --- even if you didn't want to update anything
 }
 
