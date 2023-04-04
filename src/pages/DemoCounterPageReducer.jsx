@@ -7,7 +7,10 @@ const reducer = (state, adction) => {}
 const DemoCounterPageReducer = ({ initialCount }) => {
   // const [count, setCount] = useState(initialCount)
   // const [valueToAdd, setValueToAdd] = useState(0)
+  // state is like 'count', and 'valueToAdd'
+  // dispatch is the function to change state -- like 'setCount' and 'setValueToAdd'
   const [state, dispatch] = useReducer(reducer, {
+    // in this { } is the initial value -- the same one we have in useState
     count: initialCount,
     valueToAdd: 0,
   })
