@@ -3,32 +3,32 @@ import Button from '../components/Button'
 import Panel from '../components/Panel'
 
 const DemoCounterPageReducer = ({ initialCount }) => {
-  const [count, setCount] = useState(initialCount)
-  const [valueToAdd, setValueToAdd] = useState(0)
+  // const [count, setCount] = useState(initialCount)
+  // const [valueToAdd, setValueToAdd] = useState(0)
 
   useEffect(() => {
     console.log(count)
   }, [count])
 
   const increment = () => {
-    setCount(count + 1)
+    // setCount(count + 1)
   }
 
   const decrement = () => {
-    setCount(count - 1)
+    // setCount(count - 1)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    setCount(count + valueToAdd)
-    setValueToAdd(0)
+    // setCount(count + valueToAdd)
+    // setValueToAdd(0)
   }
 
   const handleChange = (event) => {
     const value = parseInt(event.target.value) || 0
 
-    setValueToAdd(value)
+    // setValueToAdd(value)
   }
 
   return (
