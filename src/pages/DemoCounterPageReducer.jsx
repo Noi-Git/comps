@@ -2,7 +2,12 @@ import { useReducer, useEffect } from 'react'
 import Button from '../components/Button'
 import Panel from '../components/Panel'
 
-const reducer = (state, adction) => {}
+const reducer = (state, adction) => {
+  return {
+    ...state,
+    count: state.count + 1,
+  }
+}
 
 const DemoCounterPageReducer = ({ initialCount }) => {
   // const [count, setCount] = useState(initialCount)
@@ -12,6 +17,7 @@ const DemoCounterPageReducer = ({ initialCount }) => {
     count: initialCount,
     valueToAdd: 0,
   })
+  // console.log(state)
 
   useEffect(() => {
     console.log(state.count)
@@ -19,6 +25,7 @@ const DemoCounterPageReducer = ({ initialCount }) => {
 
   const increment = () => {
     // setCount(count + 1)
+    dispatch()
   }
 
   const decrement = () => {
