@@ -11,6 +11,11 @@ const useSomething = () => {
   const handleClick = () => {
     setCount(count + 1)
   }
+
+  return {
+    count,
+    handleClick,
+  }
 }
 
 const DemoCounterPage = ({ initialCount }) => {
