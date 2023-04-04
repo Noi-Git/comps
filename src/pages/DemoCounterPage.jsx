@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Button from '../components/Button'
 
-const useSomething = () => {
+const useSomething = (initialCount) => {
   const [count, setCount] = useState(initialCount)
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const useSomething = () => {
 }
 
 const DemoCounterPage = ({ initialCount }) => {
-  const { count, handleClick } = useSomething()
+  const { count, handleClick } = useSomething(initialCount)
 
   return (
     <div>
