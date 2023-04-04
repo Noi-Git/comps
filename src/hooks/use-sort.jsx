@@ -41,6 +41,12 @@ const useSort = () => {
       }
     })
   }
+  return {
+    sortBy,
+    sortOrder,
+    sortedData,
+    handleClick,
+  }
 }
 
 export default useSort

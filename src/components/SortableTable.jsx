@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import useSort from '../hooks/use-sort'
 import Table from './Table'
 import { GoTriangleUp, GoTriangleDown } from 'react-icons/go'
 
