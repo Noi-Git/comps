@@ -19,7 +19,9 @@ const DemoCounterPageReducer = ({ initialCount }) => {
   }
 
   const handleChange = (event) => {
-    const value = parseInt(event.target.value)
+    // == parseInt(event.target.value)== will get NaN if pressed on Delete key
+    // add || 0 == meaning == if the value is falsy(NaN) == assign 0 to the value varible
+    const value = parseInt(event.target.value) || 0
 
     console.log(value)
   }
