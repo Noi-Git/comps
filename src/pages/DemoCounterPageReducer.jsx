@@ -18,9 +18,14 @@ const DemoCounterPageReducer = ({ initialCount }) => {
     setCount(count - 1)
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    setCount(count + valueToAdd)
+    setValueToAdd(0)
+  }
+
   const handleChange = (event) => {
-    // == parseInt(event.target.value)== will get NaN if pressed on Delete key
-    // add || 0 == meaning == if the value is falsy(NaN) == assign 0 to the value varible
     const value = parseInt(event.target.value) || 0
 
     setValueToAdd(value)
@@ -36,7 +41,7 @@ const DemoCounterPageReducer = ({ initialCount }) => {
         <Button onClick={decrement}>Decrement</Button>
       </div>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Add a lot!</label>
         <input
           className='p-1 m-3 bg-gray-50 border border-gray-300'
