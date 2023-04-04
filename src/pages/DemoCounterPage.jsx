@@ -19,6 +19,8 @@ const useSomething = () => {
 }
 
 const DemoCounterPage = ({ initialCount }) => {
+  const { count, handleClick } = useSomething()
+
   return (
     <div>
       <h1>Count is {count}</h1>
