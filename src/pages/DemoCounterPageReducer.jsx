@@ -6,27 +6,19 @@ const INCREMENT_COUNT = 'increment'
 const SET_VALUE_TO_ADD = 'set-value-to-add'
 
 const reducer = (state, action) => {
-  if (action.type === INCREMENT_COUNT) {
-    return {
-      ...state,
-      count: state.count + 1,
-    }
-  }
+  switch (action.type) {
+    case INCREMENT_COUNT:
+      return { ...state, count: state.count + 1 }
 
-  if (action.type === SET_VALUE_TO_ADD) {
-    return {
-      ...state,
-      valueToAdd: action.payload,
-    }
-  }
+    case SET_VALUE_TO_ADD:
+      return { ...state, valueToAdd: action.payload }
 
-  return state // alway return state --- even if you didn't want to update anything
+    default:
+      return state
+  }
 }
 
 const DemoCounterPageReducer = ({ initialCount }) => {
-  // const [count, setCount] = useState(initialCount)
-  // const [valueToAdd, setValueToAdd] = useState(0)
-
   const [state, dispatch] = useReducer(reducer, {
     count: initialCount,
     valueToAdd: 0,
@@ -38,7 +30,6 @@ const DemoCounterPageReducer = ({ initialCount }) => {
   }, [state.count])
 
   const increment = () => {
-    // setCount(count + 1)
     dispatch({
       type: INCREMENT_COUNT, // the string here can be anything that make sense
     })
@@ -50,9 +41,6 @@ const DemoCounterPageReducer = ({ initialCount }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-
-    // setCount(count + valueToAdd)
-    // setValueToAdd(0)
   }
 
   const handleChange = (event) => {
