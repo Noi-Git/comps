@@ -23,7 +23,7 @@ const DemoCounterPageReducer = ({ initialCount }) => {
     // add || 0 == meaning == if the value is falsy(NaN) == assign 0 to the value varible
     const value = parseInt(event.target.value) || 0
 
-    console.log(value)
+    setValueToAdd(value)
   }
 
   return (
@@ -40,7 +40,7 @@ const DemoCounterPageReducer = ({ initialCount }) => {
         <label>Add a lot!</label>
         <input
           className='p-1 m-3 bg-gray-50 border border-gray-300'
-          value={valueToAdd}
+          value={valueToAdd || ''}
           onChange={handleChange}
           type='number'
         />
