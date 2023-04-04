@@ -3,30 +3,7 @@ import Table from './Table'
 import { GoTriangleUp, GoTriangleDown } from 'react-icons/go'
 
 const SortableTable = (props) => {
-  const [sortOrder, setSortOrder] = useState(null)
-  const [sortBy, setSortBy] = useState(null)
-
   const { config, data } = props
-
-  const handleClick = (label) => {
-    // Resetting Sort Order
-    if (sortBy && label !== sortBy) {
-      setSortOrder('asc')
-      setSortBy(label)
-      return
-    }
-
-    if (sortOrder === null) {
-      setSortOrder('asc')
-      setSortBy(label)
-    } else if (sortOrder === 'asc') {
-      setSortOrder('desc')
-      setSortBy(label)
-    } else if (sortOrder === 'desc') {
-      setSortOrder(null)
-      setSortBy(null)
-    }
-  }
 
   const updatedConfig = config.map((column) => {
     if (!column.sortValue) {
