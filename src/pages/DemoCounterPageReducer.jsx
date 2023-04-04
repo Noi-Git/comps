@@ -12,10 +12,15 @@ const DemoCounterPageReducer = ({ initialCount }) => {
     setCount(count + 1)
   }
 
+  const decrement = () => {
+    setCount(count - 1)
+  }
+
   return (
     <div>
       <h1>Count is {count}</h1>
       <Button onClick={increment}>Increment</Button>
+      <Button onClick={decrement}>Decrement</Button>
     </div>
   )
 }
