@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Button from '../components/Button'
+import Panel from '../components/Panel'
 
 const DemoCounterPageReducer = ({ initialCount }) => {
   const [count, setCount] = useState(initialCount)
@@ -17,11 +18,24 @@ const DemoCounterPageReducer = ({ initialCount }) => {
   }
 
   return (
-    <div>
-      <h1>Count is {count}</h1>
-      <Button onClick={increment}>Increment</Button>
-      <Button onClick={decrement}>Decrement</Button>
-    </div>
+    <Panel className='m-3'>
+      <h1 className='text-lg'>Count is {count}</h1>
+      <div className='flex flex-row'>
+        <Button className='mr-3' onClick={increment}>
+          Increment
+        </Button>
+        <Button onClick={decrement}>Decrement</Button>
+      </div>
+
+      <form>
+        <label>Add a lot!</label>
+        <input
+          className='p-1 m-3 bg-gray-50 border border-gray-300'
+          type='number'
+        />
+        <Button>Add it</Button>
+      </form>
+    </Panel>
   )
 }
 
