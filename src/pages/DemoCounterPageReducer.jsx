@@ -2,11 +2,15 @@ import { useReducer, useEffect } from 'react'
 import Button from '../components/Button'
 import Panel from '../components/Panel'
 
-const reducer = (state, adction) => {
-  return {
-    ...state,
-    count: state.count + 1,
+const reducer = (state, action) => {
+  if (action.type === 'increment') {
+    return {
+      ...state,
+      count: state.count + 1,
+    }
   }
+
+  return state // alway return state --- even if you didn't want to update anything
 }
 
 const DemoCounterPageReducer = ({ initialCount }) => {
@@ -25,7 +29,9 @@ const DemoCounterPageReducer = ({ initialCount }) => {
 
   const increment = () => {
     // setCount(count + 1)
-    dispatch()
+    dispatch({
+      type: 'increment', // the string here can be anything that make sense
+    })
   }
 
   const decrement = () => {
