@@ -49,6 +49,10 @@ const DemoCounterPageReducer = ({ initialCount }) => {
     const value = parseInt(event.target.value) || 0
 
     // setValueToAdd(value)
+    dispatch({
+      type: 'change-value-to-add',
+      payload: value, // tell reducer what we want to set the value to
+    })
   }
 
   return (
