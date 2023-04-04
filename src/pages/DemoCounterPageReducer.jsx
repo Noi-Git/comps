@@ -7,17 +7,15 @@ const reducer = (state, adction) => {}
 const DemoCounterPageReducer = ({ initialCount }) => {
   // const [count, setCount] = useState(initialCount)
   // const [valueToAdd, setValueToAdd] = useState(0)
-  // state is like 'count', and 'valueToAdd'
-  // dispatch is the function to change state -- like 'setCount' and 'setValueToAdd'
+
   const [state, dispatch] = useReducer(reducer, {
-    // in this { } is the initial value -- the same one we have in useState
     count: initialCount,
     valueToAdd: 0,
   })
 
   useEffect(() => {
-    console.log(count)
-  }, [count])
+    console.log(state.count)
+  }, [state.count])
 
   const increment = () => {
     // setCount(count + 1)
@@ -42,7 +40,7 @@ const DemoCounterPageReducer = ({ initialCount }) => {
 
   return (
     <Panel className='m-3'>
-      <h1 className='text-lg'>Count is {count}</h1>
+      <h1 className='text-lg'>Count is {state.count}</h1>
       <div className='flex flex-row'>
         <Button className='mr-3' onClick={increment}>
           Increment
@@ -54,7 +52,7 @@ const DemoCounterPageReducer = ({ initialCount }) => {
         <label>Add a lot!</label>
         <input
           className='p-1 m-3 bg-gray-50 border border-gray-300'
-          value={valueToAdd || ''}
+          value={state.valueToAdd || ''}
           onChange={handleChange}
           type='number'
         />
