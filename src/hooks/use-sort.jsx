@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useSort = () => {
+const useSort = (data, config) => {
   const [sortOrder, setSortOrder] = useState(null)
   const [sortBy, setSortBy] = useState(null)
 

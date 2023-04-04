@@ -3,8 +3,8 @@ import Table from './Table'
 import { GoTriangleUp, GoTriangleDown } from 'react-icons/go'
 
 const SortableTable = (props) => {
-  const { sortBy, sortOrder, sortedData, handleClick } = useSort()
   const { config, data } = props
+  const { sortBy, sortOrder, sortedData, handleClick } = useSort(data, config)
 
   const updatedConfig = config.map((column) => {
     if (!column.sortValue) {
