@@ -51,9 +51,6 @@ const DemoCounterPageReducer = ({ initialCount }) => {
     event.preventDefault()
 
     dispatch({ type: ADD_VALUE_TO_COUNT })
-
-    // setCount(count + valueToAdd)
-    // setValueToAdd(0)
   }
 
   const handleChange = (event) => {
